@@ -1,0 +1,115 @@
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        #stocks-list table {
+            background-color: white;
+        }
+
+        body {
+            background-color: rgb(245, 222, 179);
+        }
+
+        .nav {
+            text-align: center;
+            background-color: red;
+        }
+
+        .nav a {
+            color: #f2f2f2;
+            display: inline-block;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .stock-search {
+            margin-top: 20px;
+        }
+
+        .tutorial {
+            background-color: rgb(49, 167, 49);
+            text-align: center;
+            width: 700px;
+            height: 250px;
+            margin: 0 auto;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bullet {
+            text-align: left;
+            float: left;
+            color: #f7f7f7f5;
+            list-style-position: inside;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>INST 377 - Activities</h1>
+    <div class="nav">
+        <ul>
+            <a href="home.html">Home</a>
+            <a href="stocks.html">Stocks</a>
+            <a href="dogs.html">Dogs</a>
+        </ul>
+    </div>
+
+
+    <h1>Let's chart some stocks!</h1>
+    <input type="text" id="stockSymbol">
+    <br>
+    <input type="date" id="date">
+    <br>
+    <button onclick="fetchStockInfo()">LookUp!</button>
+
+    <div id="stock-info"></div>
+
+    <canvas id="stock-chart" width="300" height="150"></canvas>
+
+    <br>
+    <div id="top5">
+        <div id="stocks-list">
+        </div>
+    </div>
+    <div class="tutorial">
+        <div class="bullet">
+            <h3>In this web page there are options to Navigate using Audio!</h3>
+            <p>Ensure your mic is enabled to be able to use this feature</p>
+            <ul>
+                <li>Navigate to a Different Page
+                    <ul>
+                        <li>Say: Navigate to &lt;page&gt;</li>
+                    </ul>
+                </li>
+                <li>Change the Page Color
+                    <ul>
+                        <li>Say: Change the color to &lt;color&gt</li>
+                    </ul>
+                </li>
+                <li>Say Hello Back to you!</li>
+                <ul>
+                    <li>Say: Hello</li>
+                </ul>
+            </ul>
+            <div>
+                <button id="audio-on-button" role="button">Turn On Audio</button>
+                <button id="audio-off-button" role="button">Turn Off Audio</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="navigation.js"></script>
+</body>
+
+</html>

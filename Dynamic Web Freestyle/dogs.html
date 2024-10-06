@@ -1,0 +1,215 @@
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script src="navigation.js"></script>
+    <style>
+        #breed-details {
+            border: 2px solid transparent;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: white;
+        }
+
+        body {
+            background-color: rgb(245, 244, 241);
+        }
+
+        .nav {
+            text-align: center;
+            background-color: red;
+        }
+
+        .nav a {
+            color: #f2f2f2;
+            display: inline-block;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dog-images-container {
+            text-align: center;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .dog-slider {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .dog-slider img {
+            width: 60%;
+            max-height: 400px;
+            display: block;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+
+        .arrow-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: 1px solid #ddd;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .left-arrow-button {
+            left: 10px;
+        }
+
+        .right-arrow-button {
+            right: 10px;
+        }
+
+        .bullet-points {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .bullet-point {
+            width: 10px;
+            height: 10px;
+            background-color: #bbb;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .bullet-point.active {
+            background-color: #333;
+        }
+
+        .tutorial {
+            background-color: rgb(49, 167, 49);
+            text-align: center;
+
+            width: 700px;
+            height: 250px;
+            margin: 0 auto;
+            padding: 10px;
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+        .bullet {
+            text-align: left;
+            float: left;
+            color: #f7f7f7f5;
+            list-style-position: inside;
+        }
+
+        #breeds-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        #breeds-list button {
+            margin: 5px;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #breeds-list button:hover {
+            background-color: darkred;
+        }
+
+        #breeds-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        #breeds-list li {
+            display: inline-block;
+        }
+
+        #breeds-list button {
+            margin: 5px;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #breeds-list button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>INST 377 - Doggos</h1>
+    <div class="nav">
+        <ul>
+            <a href="home.html">Home</a>
+            <a href="stocks.html">Stocks</a>
+            <a href="dogs.html">Dogs</a>
+        </ul>
+    </div>
+    <h2>Doggos!🐶</h2>
+    <div class="dog-images-container">
+        <span class="arrow-button left-arrow-button" onclick="navigateImages(-1)">←</span>
+        <div class="dog-slider">
+        </div>
+        <span class="arrow-button right-arrow-button" onclick="navigateImages(1)">→</span>
+        <div class="bullet-points" id="bullet-points"></div>
+    </div>
+    <br>
+
+    <div id="breeds-list"></div>
+    <div id="breed-details"></div>
+    <br>
+    <div class="tutorial">
+        <div class="bullet">
+            <h3>In this web page there are options to Navigate using Audio!</h3>
+            <p>Ensure your mic is enabled to be able to use this feature</p>
+            <ul>
+                <li>Navigate to a Different Page
+                    <ul>
+                        <li>Say: Navigate to &lt;page&gt;</li>
+                    </ul>
+                </li>
+                <li>Change the Page Color
+                    <ul>
+                        <li>Say: Change the color to &lt;color&gt</li>
+                    </ul>
+                </li>
+                <li>Say Hello Back to you!</li>
+                <ul>
+                    <li>Say: Hello</li>
+                </ul>
+            </ul>
+            <div>
+                <button id="audio-on-button" role="button">Turn On Audio</button>
+                <button id="audio-off-button" role="button">Turn Off Audio</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
